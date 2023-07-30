@@ -6,12 +6,12 @@
 
 Install dependecies via poetry
 
-```
+``
 python3.9 -m pip install poetry
-```
+``
 
-```
+``
 python3.9 -m poetry install
-```
+``
 
 
