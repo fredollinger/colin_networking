@@ -2,6 +2,6 @@ class ECU:
 
     """ECU class."""
 
-    def __init__(self):
+    def __init__(self, name: str):
         """Constructor."""
-        pass
+        self.name = name
