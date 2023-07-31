@@ -1,7 +1,7 @@
 from colin_networking.Network import Network
 from colin_networking.ECU import ECU
 
-from typing import Dict
+from typing import Dict, List
 
 class NetworkInventory:
 
@@ -25,13 +25,21 @@ class NetworkInventory:
         value = ECU
         
         """
-        self.ecus: Dict[str, ECU] = {}
+        self.ecus: Dict[str, List[ECU]] = {}
 
     def add_network(self, network: Network):
         """Add a New Network."""
 
         # All networks have names so add to a dict by name
         self.networks[network.name] = network
+        self.ecus[network.name] = []
 
     def add_ecu(self, network_name: str, ecu: ECU):
-        self.ecus[network_name] = ecu
+        """Add a New ECU.
+
+        Need to ensure that the ECU is paired up with
+        networks.
+        
+        """
+
+        self.ecus[network_name].append(ecu)

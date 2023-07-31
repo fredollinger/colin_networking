@@ -13,4 +13,8 @@ def test_NetworkInventory_add_network():
     ni.add_network(network1)
     ni.add_network(network2)
 
+    # Add both ECUS to network1
     ni.add_ecu("network1", ecu1)
+    ni.add_ecu("network1", ecu2)
+
+    assert (2 == len(ni.ecus["network1"]))
